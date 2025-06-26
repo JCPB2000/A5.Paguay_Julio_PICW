@@ -114,3 +114,6 @@ class CalculadoraBasica extends HTMLElement {
 
 // Registro de componente
 customElements.define('calculadora-basica', CalculadoraBasica);
+
+// Enlace actividad
+// https://github.com/JCPB2000/A5.Paguay_Julio_PICW.git
