@@ -54,3 +54,37 @@ class CalculadoraBasica extends HTMLElement {
     const num2 = parseFloat(this.shadowRoot.querySelector('#num2').value);
     const operacion = this.shadowRoot.querySelector('#operacion').value;
     const resultadoDiv = this.shadowRoot.querySelector('#resultado');
+    // Validar entradas
+    if (isNaN(num1) || isNaN(num2)) {
+      resultadoDiv.className = 'alert alert-danger mt-3 text-center';
+      resultadoDiv.textContent = 'Por favor ingrese números válidos.';
+      return;
+    }
+
+    // Realizar operación
+    let resultado = 0;
+    let simbolo = '';
+
+    switch (operacion) {
+      case 'suma':
+        resultado = num1 + num2;
+        simbolo = '+';
+        break;
+      case 'resta':
+        resultado = num1 - num2;
+        simbolo = '-';
+        break;
+      case 'multiplicacion':
+        resultado = num1 * num2;
+        simbolo = '×';
+        break;
+      case 'division':
+        if (num2 === 0) {
+          resultadoDiv.className = 'alert alert-danger mt-3 text-center';
+          resultadoDiv.textContent = 'Error: división por cero.';
+          return;
+        }
+        resultado = num1 / num2;
+        simbolo = '÷';
+        break;
+    }
