@@ -91,3 +91,10 @@ class CalculadoraBasica extends HTMLElement {
     // Mostrar resultado
     resultadoDiv.className = 'alert alert-success mt-3 text-center';
     resultadoDiv.textContent = `Resultado: ${resultado}`;
+
+    // Enviar evento personalizado
+    this.dispatchEvent(new CustomEvent('resultado-calculado', {
+      detail: { num1, num2, operacion, resultado },
+      bubbles: true,
+      composed: true
+    }));
