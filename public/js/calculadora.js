@@ -88,3 +88,6 @@ class CalculadoraBasica extends HTMLElement {
         simbolo = '÷';
         break;
     }
+    // Mostrar resultado
+    resultadoDiv.className = 'alert alert-success mt-3 text-center';
+    resultadoDiv.textContent = `Resultado: ${resultado}`;
