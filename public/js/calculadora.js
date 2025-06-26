@@ -15,12 +15,12 @@ class CalculadoraBasica extends HTMLElement {
 
           <div class="mb-3">
             <label class="form-label">Primer número:</label>
-            <input type="number" id="num1" class="form-control" placeholder="Ej: 12">
+            <input type="number" id="num1" class="form-control" placeholder="Ingrese número">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Segundo número:</label>
-            <input type="number" id="num2" class="form-control" placeholder="Ej: 4">
+            <input type="number" id="num2" class="form-control" placeholder="Ingrese número">
           </div>
 
           <div class="mb-3">
@@ -36,7 +36,7 @@ class CalculadoraBasica extends HTMLElement {
           <button id="calcular" class="btn btn-success w-100">Calcular</button>
 
           <div id="resultado" class="alert alert-secondary mt-3 text-center">
-            Resultado aquí...
+            Resultado
           </div>
 
           <h6 class="mt-4">Historial:</h6>
