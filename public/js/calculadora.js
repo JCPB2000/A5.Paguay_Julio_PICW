@@ -1,3 +1,6 @@
+class CalculadoraBasica extends HTMLElement {
+  constructor() {
+    super();
 
     // Crear Shadow DOM 
     this.attachShadow({ mode: 'open' });
