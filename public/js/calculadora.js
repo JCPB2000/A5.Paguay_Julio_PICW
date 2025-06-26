@@ -32,3 +32,15 @@ class CalculadoraBasica extends HTMLElement {
               <option value="division">División</option>
             </select>
           </div>
+          <button id="calcular" class="btn btn-success w-100">Calcular</button>
+
+          <div id="resultado" class="alert alert-secondary mt-3 text-center">
+            Resultado aquí...
+          </div>
+
+          <h6 class="mt-4">Historial:</h6>
+          <ul id="historial" class="list-group small"></ul>
+        </div>
+      </div>
+    `;
+  }
