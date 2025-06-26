@@ -114,4 +114,3 @@ class CalculadoraBasica extends HTMLElement {
 
 // Registro de componente
 customElements.define('calculadora-basica', CalculadoraBasica);
-s
