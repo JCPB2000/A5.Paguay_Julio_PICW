@@ -44,3 +44,13 @@ class CalculadoraBasica extends HTMLElement {
       </div>
     `;
   }
+  connectedCallback() {
+    const btn = this.shadowRoot.querySelector('#calcular');
+    btn.addEventListener('click', () => this.realizarCalculo());
+  }
+
+  realizarCalculo() {
+    const num1 = parseFloat(this.shadowRoot.querySelector('#num1').value);
+    const num2 = parseFloat(this.shadowRoot.querySelector('#num2').value);
+    const operacion = this.shadowRoot.querySelector('#operacion').value;
+    const resultadoDiv = this.shadowRoot.querySelector('#resultado');
