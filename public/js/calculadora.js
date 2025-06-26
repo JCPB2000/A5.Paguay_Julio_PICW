@@ -32,6 +32,7 @@ class CalculadoraBasica extends HTMLElement {
               <option value="division">División</option>
             </select>
           </div>
+
           <button id="calcular" class="btn btn-success w-100">Calcular</button>
 
           <div id="resultado" class="alert alert-secondary mt-3 text-center">
@@ -44,6 +45,7 @@ class CalculadoraBasica extends HTMLElement {
       </div>
     `;
   }
+
   connectedCallback() {
     const btn = this.shadowRoot.querySelector('#calcular');
     btn.addEventListener('click', () => this.realizarCalculo());
@@ -54,6 +56,7 @@ class CalculadoraBasica extends HTMLElement {
     const num2 = parseFloat(this.shadowRoot.querySelector('#num2').value);
     const operacion = this.shadowRoot.querySelector('#operacion').value;
     const resultadoDiv = this.shadowRoot.querySelector('#resultado');
+
     // Validar entradas
     if (isNaN(num1) || isNaN(num2)) {
       resultadoDiv.className = 'alert alert-danger mt-3 text-center';
@@ -88,6 +91,7 @@ class CalculadoraBasica extends HTMLElement {
         simbolo = '÷';
         break;
     }
+
     // Mostrar resultado
     resultadoDiv.className = 'alert alert-success mt-3 text-center';
     resultadoDiv.textContent = `Resultado: ${resultado}`;
@@ -98,3 +102,16 @@ class CalculadoraBasica extends HTMLElement {
       bubbles: true,
       composed: true
     }));
+
+    // Agregar historial
+    const historial = this.shadowRoot.querySelector('#historial');
+    const item = document.createElement('li');
+    item.className = 'list-group-item';
+    item.textContent = `${num1} ${simbolo} ${num2} = ${resultado}`;
+    historial.appendChild(item);
+  }
+}
+
+// Registro de componente
+customElements.define('calculadora-basica', CalculadoraBasica);
+s
