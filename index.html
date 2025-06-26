@@ -12,13 +12,18 @@
   <!-- Título de la página -->
   <h1 class="text-center text-primary mt-4">Calculadora Web con Shadow DOM</h1>
 
-
+  <!-- Componente HTML normal -->
   <calculadora-basica></calculadora-basica>
 
   <!-- Script del componente -->
   <script type="module" src="./public/js/calculadora.js"></script>
 
-  
+  <!-- Evento personalizado -->
+  <script>
+    document.querySelector('calculadora-basica')
+      .addEventListener('resultado-calculado', function (evento) {
+        console.log("Resultado recibido desde el componente:", evento.detail);
+      });
+  </script>
 
 </body>
-</html>
